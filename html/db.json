@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "João",
+      "sobrenome": "Silva",
+      "location": "Brasil",
+      "senha": "aa",
+      "confirmaSenha": "aa",
+      "news": "nao",
+      "sexo": "Masc"
+    },
+    {
+      "id": "2",
+      "name": "Mike",
+      "sobrenome": "Silva",
+      "location": "Brasil",
+      "senha": "asd",
+      "confirmaSenha": "asd",
+      "news": "nao",
+      "sexo": "Masc"
+    },
+    {
+      "id": "3",
+      "name": "Mario",
+      "sobrenome": "dsadsada",
+      "location": "Portugal",
+      "senha": "qqq",
+      "confirmaSenha": "qqq",
+      "news": "nao",
+      "sexo": "Masc"
+    },
+    {
+      "id": "4",
+      "name": "Amanda",
+      "sobrenome": "Ribeiro",
+      "location": "Japão",
+      "senha": "123456",
+      "confirmaSenha": "123456",
+      "news": "nao",
+      "sexo": "Fem"
+    }
+  ]
+}

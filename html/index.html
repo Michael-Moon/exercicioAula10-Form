@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script language = "javascript"  src="../js/main.js"></script>
+    <script language = "javascript"  src="../js/focus.js"></script>
+    <link rel="stylesheet" href="../cs/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" id="div">
+        <div class="row mt-5">
+            <div class="col-6">
+                <!-- Star Div Form -->
+                <div class="container" id="divId">
+                    <form action="" id="myForm">
+                        <!-- Star input id -->
+                        <label>ID:</label><br>
+                        <input type="text" value="" id="id" onfocus="gFocoId()" onblur="pFocoId()" ><br>
+                        <!-- End input id -->
+
+                         <!-- Star input name -->
+                        <label>Nome:</label><br>
+                        <input type="text" value="" id="name" onfocus="gFocoName()" onblur="pFocoName()"><br>
+                         <!-- End input name -->
+
+                          <!-- Star input sobrenome -->
+                        <label>Sobrenome:</label><br>
+                        <input type="text" value="" id="sobrenome" onfocus="gFocoSobrenome()" onblur="pFocoSobrenome()"><br>
+                         <!-- End input sobrenome -->
+
+                          <!-- Star input Location -->
+                        <label>Localização:</label><br>
+                        <input type="text" value="" id="location" onfocus="gFocoLocation()" onblur="pFocoLocation()"><br>
+                         <!-- End input Location -->
+
+                          <!-- Star input Senha -->
+                        <label>Senha:</label><br>
+                        <input type="password" value="" id="senha" onfocus="gFocoSenha()" onblur="pFocoSenha()"><br>                        
+                         <!-- End input Senha -->
+
+                          <!-- Star input Confirma senha -->
+                        <label>Digite a mesma senha:</label><br>
+                        <input type="password" value="" id="confirmaSenha" onfocus="gFocoConfirmaSenha()" onblur="pFocoConfirmaSenha()"><br>
+                         <!-- End input Confirma senha  -->
+                         
+                        <!-- Star radio Button Receber Noticia -->
+                        <label >Gostaria de Receber noticias do Site: </label>
+                        <input type="radio" name="news" value="sim" id="newsSim" onfocus="gFocoNews()" onblur="pFocoNews()"><label>Sim</label>
+                        <input type="radio" name="news" value="nao" id="newsNao" onfocus="gFocoNews()" onblur="pFocoNews()"><label>Não</label>
+                        <!-- End radio Button Receber Noticia -->
+                        <br>
+                        <!-- Star radio Button sexo -->
+                        <label>Sexo:</label><br>
+                        <input class="radio-inline ml-3" type="radio" name="sexo" value="Masc" id="sexoM" onclick="corSexo()" onfocus="gFocoSexo()" onblur="pFocoSexo()"><label >Masculino</label>
+                        <input class="radio-inline ml-3" type="radio" name="sexo" value="Fem" id="sexoF" onclick="corSexo()" onfocus="gFocoSexo()" onblur="pFocoSexo()"><label >Feminino</label>
+                        <input class="radio-inline ml-3" type="radio" name="sexo" value="Outro" id="sexoO" onclick="corSexo()" onfocus="gFocoSexo()" onblur="pFocoSexo()"><label >Outro</label>
+                        <!-- End radio Button sexo -->
+                        <br>
+                        <!-- Star Button -->
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-secondary" onclick="envio()">Enviar</button>
+                            <button type="button" class="btn btn-secondary" onclick="callEditar(editar)" >Editar</button>
+                            <button type="button" class="btn btn-secondary" onclick="redefinirCampos()" >Redefinir</button> 
+                            <button type="button" class="btn btn-secondary" onclick="apagar()" >Apagar</button>                            
+                        </div> 
+                        <!-- End Button -->                                     
+                    </form>           
+                </div>
+                <!-- End Div Form -->
+            </div>
+            <!-- Star Div button ocultar e onde receber valores dos inputs q não foi enviado -->
+            <div class="col-6">
+                <button onclick="ocultar('divId')" type="button" class="btn btn-primary">Ocultar/Exibir</button>        
+
+                <ul id="teste" style="display: none;">  
+                    <li id="teste1"></li>
+                    <li id="teste2"></li>
+                    <li id="teste3"></li>
+                    <li id="teste4"></li>
+                    <li id="teste5"></li>
+                    <li id="teste6"></li>                    
+                </ul>
+                <ul id="ulSexoNews" style="display: none;" >
+                    <li id="newsLi"></li>
+                    <li id="sexoLi"></li>
+                </ul>
+            </div>
+            <!-- End Div button ocultar e onde receber valores dos inputs q não foi enviado -->
+        </div> 
+
+    </div>    
+</body>
+</html>
