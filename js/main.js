@@ -187,34 +187,51 @@ function redefinirCampos(){
     document.getElementById("location").value = "";
     document.getElementById("senha").value = "";
     document.getElementById("confirmaSenha").value = "";
+    
     document.getElementById("newsSim").checked = false;
     document.getElementById("newsNao").checked = false;
     document.getElementById("sexoM").checked = false;
     document.getElementById("sexoF").checked = false;
     document.getElementById("sexoO").checked = false;
 
-    document.getElementById("div").style.backgroundColor = "white";
+    document.getElementById("newsLi").innerHTML = "";
+    document.getElementById("sexoLi").innerHTML = "";
+
+    document.getElementById("div").style.backgroundColor="white";
+    document.getElementById("divId").style.backgroundColor="aquamarine";
 }
 
 //Star oculda Div do form, e mostra valores em uma ul que foram preenchidos
 function ocultar(divId){
-    var divForm = document.getElementById(divId).style.display;
-    //var listTeste = document.getElementById("teste").style.display;
-    // document.getElementById("teste").style.display = "none";
-    //document.getElementById("ulSexoNews").style.display = "none";
-    //listTeste.display = "none";
+
+    var divForm = document.getElementById(divId).style.display;    
     
      if(divForm != "none"){
            document.getElementById(divId).style.display = "none"; 
-           document.getElementById("teste").style.display = "block";
-           document.getElementById("ulSexoNews").style.display = "block"           
-          
+           document.getElementById("teste").style.display = "block";        
            // alert('to aqui')
-        }//else{
-           // document.getElementById(divId).style.display = "none";
-            //document.getElementById("teste").style.display = "block";
-            //document.getElementById("ulSexoNews").style.display = "block"          
-        //}
+        }
+
+        if(document.getElementById("sexoM").checked != false || document.getElementById("sexoF").checked != false  || document.getElementById("sexoO").checked != false){
+            document.getElementById("ulSexoNews").style.display = "block"; 
+
+            if(document.getElementById("newsNao").checked != true && document.getElementById("newsSim").checked != true){
+                document.getElementById("newsLi").style.display = "none";
+            }else {
+                document.getElementById("newsLi").style.display = "block";
+            }  
+        }
+        if(document.getElementById("newsNao").checked != false || document.getElementById("newsSim").checked != false){
+            document.getElementById("ulSexoNews").style.display = "block";
+
+            if(document.getElementById("sexoM").checked != true && document.getElementById("sexoF").checked != true  && document.getElementById("sexoO").checked != true){
+                document.getElementById("sexoLi").style.display = "none";
+            }else{
+                document.getElementById("sexoLi").style.display = "block";
+            }
+            
+        }
+
     if( document.getElementById("teste").style.display != "none"){ 
        
        
@@ -224,18 +241,8 @@ function ocultar(divId){
             }else{
                 document.getElementById("teste"+(i+1)).style.display = "block";
             }                                
-        }  
-        if(document.getElementById("ulSexoNews").style.display != "none"){
-            
-             if(document.getElementById("sexoM").checked != true && document.getElementById("sexoF").checked != true  && document.getElementById("sexoO").checked != true){
-                document.getElementById("sexoLi").style.display = "none";
-
-            }
-             if(document.getElementById("newsNao").checked != true && document.getElementById("newsSim").checked != true){
-                document.getElementById("newsLi").style.display = "none";
-            } 
-        }
-
+        }       
+        
         for(var i=1; i <= document.getElementById("teste").childElementCount; i++){
             if(document.getElementById("teste"+i).value == ""){
                     
@@ -246,26 +253,24 @@ function ocultar(divId){
                 document.getElementById("teste5").innerHTML = ("Senha: " + document.getElementById("senha").value);
                 document.getElementById("teste6").innerHTML = ("Confirmar Senha: " + document.getElementById("confirmaSenha").value);
             }
-        }       
-
-        if(document.getElementById("newsSim").checked != false){
-            
-            document.getElementById("newsLi").innerText = ("News: " + document.getElementById("newsSim").value);
-
-        }if(document.getElementById("newsNao").checked != false){
-            document.getElementById("newsLi").innerHTML = ("News: " + document.getElementById("newsNao").value);
-        }
-
-        if(document.getElementById("sexoM").checked != false){               
-            document.getElementById("sexoLi").innerHTML = ("Sexo: " + document.getElementById("sexoM").value);
-            
-        } if(document.getElementById("sexoF").checked != false){
-            document.getElementById("sexoLi").innerHTML = ("Sexo: " + document.getElementById("sexoF").value);
-
-        }if(document.getElementById("sexoO").checked != false){
-            document.getElementById("sexoLi").innerHTML = ("Sexo: " + document.getElementById("sexoO").value);
-        }    
-
+            if(document.getElementById("newsSim").checked != false){            
+                document.getElementById("newsLi").innerText = ("News: " + document.getElementById("newsSim").value);
+    
+            }
+            if(document.getElementById("newsNao").checked != false){
+                document.getElementById("newsLi").innerHTML = ("News: " + document.getElementById("newsNao").value);
+            }
+    
+            if(document.getElementById("sexoM").checked != false){               
+                document.getElementById("sexoLi").innerHTML = ("Sexo: " + document.getElementById("sexoM").value);
+                
+            } if(document.getElementById("sexoF").checked != false){
+                document.getElementById("sexoLi").innerHTML = ("Sexo: " + document.getElementById("sexoF").value);
+    
+            }if(document.getElementById("sexoO").checked != false){
+                document.getElementById("sexoLi").innerHTML = ("Sexo: " + document.getElementById("sexoO").value);
+            }    
+        }  
     }    
     
 }//End oculda Div do form, e mostra valores em uma ul que foram preenchidos
