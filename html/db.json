@@ -17,28 +17,27 @@
       "location": "Brasil",
       "senha": "asd",
       "confirmaSenha": "asd",
-      "news": "nao",
-      "sexo": "Masc"
-    },
-    {
-      "id": "3",
-      "name": "Mario",
-      "sobrenome": "dsadsada",
-      "location": "Portugal",
-      "senha": "qqq",
-      "confirmaSenha": "qqq",
-      "news": "nao",
+      "news": "sim",
       "sexo": "Masc"
     },
     {
       "id": "4",
       "name": "Amanda",
       "sobrenome": "Ribeiro",
-      "location": "Japão",
+      "location": "Suecia",
       "senha": "123456",
       "confirmaSenha": "123456",
       "news": "nao",
       "sexo": "Fem"
+    },
+    {
+      "id": "5",
+      "name": "Mike",
+      "sobrenome": "Ribeiro",
+      "location": "Brasil",
+      "senha": "123",
+      "confirmaSenha": "123",
+      "sexo": "Masc"
     }
   ]
 }

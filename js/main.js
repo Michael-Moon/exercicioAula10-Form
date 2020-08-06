@@ -181,12 +181,12 @@ function apagar() {
 //Start Redefinir campos preenchidos
 function redefinirCampos(){
     
-    document.getElementById("id").value = null;
-    document.getElementById("name").value = null;
-    document.getElementById("sobrenome").value = null;
-    document.getElementById("location").value = null;
-    document.getElementById("senha").value = null;
-    document.getElementById("confirmaSenha").value = null;
+    document.getElementById("id").value = "";
+    document.getElementById("name").value = "";
+    document.getElementById("sobrenome").value = "";
+    document.getElementById("location").value = "";
+    document.getElementById("senha").value = "";
+    document.getElementById("confirmaSenha").value = "";
     document.getElementById("newsSim").checked = false;
     document.getElementById("newsNao").checked = false;
     document.getElementById("sexoM").checked = false;
@@ -200,25 +200,29 @@ function redefinirCampos(){
 function ocultar(divId){
     var divForm = document.getElementById(divId).style.display;
     //var listTeste = document.getElementById("teste").style.display;
-    document.getElementById("teste").style.display = "none";
-    document.getElementById("ulSexoNews").style.display = "none";
+    // document.getElementById("teste").style.display = "none";
+    //document.getElementById("ulSexoNews").style.display = "none";
     //listTeste.display = "none";
     
-     if(divForm == "none"){
-           document.getElementById(divId).style.display = "block";
-           
+     if(divForm != "none"){
+           document.getElementById(divId).style.display = "none"; 
+           document.getElementById("teste").style.display = "block";
+           document.getElementById("ulSexoNews").style.display = "block"           
+          
            // alert('to aqui')
-        }else{
-            document.getElementById(divId).style.display = "none";
-            document.getElementById("teste").style.display = "block";
-            document.getElementById("ulSexoNews").style.display = "block"          
-    }
+        }//else{
+           // document.getElementById(divId).style.display = "none";
+            //document.getElementById("teste").style.display = "block";
+            //document.getElementById("ulSexoNews").style.display = "block"          
+        //}
     if( document.getElementById("teste").style.display != "none"){ 
        
        
         for (var i =0; i < document.getElementById("teste").childElementCount; i++ ){
             if(document.getElementById(arrayIds[i]).value == ""){
                 document.getElementById("teste"+(i+1)).style.display = "none";               
+            }else{
+                document.getElementById("teste"+(i+1)).style.display = "block";
             }                                
         }  
         if(document.getElementById("ulSexoNews").style.display != "none"){
@@ -230,13 +234,19 @@ function ocultar(divId){
              if(document.getElementById("newsNao").checked != true && document.getElementById("newsSim").checked != true){
                 document.getElementById("newsLi").style.display = "none";
             } 
-        } 
-        document.getElementById("teste1").innerHTML = ("Id: " + document.getElementById("id").value);
-        document.getElementById("teste2").innerHTML = ("Nome: " + document.getElementById("name").value);
-        document.getElementById("teste3").innerHTML = ("Sobrenome: " + document.getElementById("sobrenome").value);
-        document.getElementById("teste4").innerHTML = ("Localização: " + document.getElementById("location").value);
-        document.getElementById("teste5").innerHTML = ("Senha: " + document.getElementById("senha").value);
-        document.getElementById("teste6").innerHTML = ("Confirmar Senha: " + document.getElementById("confirmaSenha").value);
+        }
+
+        for(var i=1; i <= document.getElementById("teste").childElementCount; i++){
+            if(document.getElementById("teste"+i).value == ""){
+                    
+                document.getElementById("teste1").innerHTML = ("Id: " + document.getElementById("id").value);
+                document.getElementById("teste2").innerHTML = ("Nome: " + document.getElementById("name").value);
+                document.getElementById("teste3").innerHTML = ("Sobrenome: " + document.getElementById("sobrenome").value);
+                document.getElementById("teste4").innerHTML = ("Localização: " + document.getElementById("location").value);
+                document.getElementById("teste5").innerHTML = ("Senha: " + document.getElementById("senha").value);
+                document.getElementById("teste6").innerHTML = ("Confirmar Senha: " + document.getElementById("confirmaSenha").value);
+            }
+        }       
 
         if(document.getElementById("newsSim").checked != false){
             
@@ -257,8 +267,18 @@ function ocultar(divId){
         }    
 
     }    
+    
 }//End oculda Div do form, e mostra valores em uma ul que foram preenchidos
+function exibir(divId){
+    
+    document.getElementById(divId).style.display = "block";
+    document.getElementById("teste").style.display = "none";
+    document.getElementById("ulSexoNews").style.display = "none";  
 
+     for (var i=1; i <=document.getElementById("teste").childElementCount; i++){
+       document.getElementById("teste"+i).innerHTML = "";            
+    }
+}
 //Star altera cor de fundo ao marca sexo
 function corSexo(){
     
